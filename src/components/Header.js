@@ -11,12 +11,12 @@ const Header = () => {
   return (
     <header className="bg-white p-4 flex justify-between items-center">
       <nav className="flex space-x-4">
-        <a href="#" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 0 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(0)}>Home</a>
-        <a href="#" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 1 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(1)}>About</a>
-        <a href="#" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 2 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(2)}>Portfolio</a>
-        <a href="#" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 3 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(3)}>Projects</a>
-        <a href="#" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 4 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(4)}>Reports</a>
-        <a href="#" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 5 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(5)}>Statements</a>
+        <a href="github.com" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 0 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(0)}>Home</a>
+        <a href="github.com" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 1 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(1)}>About</a>
+        <a href="github.com" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 2 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(2)}>Portfolio</a>
+        <a href="github.com" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 3 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(3)}>Projects</a>
+        <a href="github.com" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 4 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(4)}>Reports</a>
+        <a href="github.com" className={`text-customBlue rounded-2xl px-3 py-1 ${selectedItem === 5 ? 'bg-blue-100 text-618af3' : ''}`} onClick={() => handleClick(5)}>Statements</a>
       </nav>
       <div className="flex items-center space-x-4">
         <div className="relative">
