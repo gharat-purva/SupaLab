@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
-import MainContent from './MainContent'; // Import MainContent component
-import SalesChart from './SalesChart';
+import MainContent from './MainContent'; 
 
 // Define your data here or import it from another file
 const data = {
