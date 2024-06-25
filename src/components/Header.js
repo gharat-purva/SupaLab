@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
 const Header = () => {
-  const [selectedItem, setSelectedItem] = useState(0); // Local state to manage selected item
+  const [selectedItem, setSelectedItem] = useState(0); 
 
   const handleClick = (index) => {
-    setSelectedItem(index); // Update selected item based on click
+    setSelectedItem(index); 
   };
 
   return (
@@ -20,7 +20,7 @@ const Header = () => {
       </nav>
       <div className="flex items-center space-x-4">
         <div className="relative">
-          <input type="text" className="px-4 py-2 bg-gray text-gray-800 rounded" placeholder="Search..." />
+          <input id='search' type="text" className="px-4 py-2 bg-gray text-gray-800 rounded" placeholder="Search..." />
           <FaSearch className="absolute top-2 right-2 text-gray-600" />
         </div>
       </div>

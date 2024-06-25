@@ -3,7 +3,6 @@ import Sidebar from './Sidebar';
 import Header from './Header';
 import MainContent from './MainContent'; 
 
-// Define your data here or import it from another file
 const data = {
   '12 months': [
     { name: 'Jan', sales: 4000, customers: 2400 },
@@ -36,7 +35,6 @@ const Dashboard = () => {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    // Add logic to toggle dark mode in your application
   };
 
   return (
