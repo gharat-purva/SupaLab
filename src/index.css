@@ -1,1 +1,6 @@
 @import './tailwind.css';
+@media (max-width: 768px) {
+    .md\\:hidden {
+      display: none;
+    }
+  }

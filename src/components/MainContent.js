@@ -1,7 +1,7 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { FaCircleInfo } from 'react-icons/fa6';
 import { FaCalendarAlt, FaFilter } from 'react-icons/fa';
+import { FaCircleInfo } from 'react-icons/fa6';
 
 const MainContent = ({ timeframe = '12 months', setTimeframe = () => {}, data = {} }) => {
   const handleTimeframeChange = (selectedTimeframe) => {
@@ -23,7 +23,7 @@ const MainContent = ({ timeframe = '12 months', setTimeframe = () => {}, data = 
     <div className="">
       <main className="p-8">
         <section className="mb-8">
-          <div className="flex justify-start items-center mb-4">
+          <div className="flex flex-wrap justify-start items-center mb-4 space-x-2">
             <button
               onClick={() => handleTimeframeChange('12 months')}
               className={`px-4 py-2 rounded-l border border-darkgray bg-white text-customBlue font-medium focus:outline-none ${timeframe === '12 months' ? 'font-bold' : ''}`}
@@ -48,18 +48,16 @@ const MainContent = ({ timeframe = '12 months', setTimeframe = () => {}, data = 
             >
               24 hours
             </button>
-            <button
-              className="px-4 py-2 mr-5 border border-darkgray bg-white text-black font-medium flex focus:outline-none"
-            ><FaCalendarAlt className="text-xl font-bold" />Select Dates</button>
-            <button
-              className="px-4 py-2 border border-darkgray bg-white text-black font-medium flex focus:outline-none"
-            ><FaFilter className="text-xl font-bold" />Filter</button>
+            <button className="px-4 py-2 mr-2 flex items-center border border-darkgray bg-white text-black font-medium focus:outline-none">
+              <FaCalendarAlt className="text-xl font-bold mr-1" /> Select Dates
+            </button>
+            <button className="px-4 py-2 flex items-center border border-darkgray bg-white text-black font-medium focus:outline-none">
+              <FaFilter className="text-xl font-bold mr-1" /> Filter
+            </button>
           </div>
           
           <div className="mt-4 bg-white p-4 rounded">
-            <h3 className="text-xl font-semibold text-Black flex">Total Product Sales &nbsp;
-              <span><FaCircleInfo className="text-darkest font-bold" /></span>
-            </h3>
+            <h3 className="text-xl font-semibold text-black flex items-center">Total Product Sales <span><FaCircleInfo className="text-gray-600 ml-1" /></span></h3>
             
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={data[timeframe]}>
@@ -75,75 +73,67 @@ const MainContent = ({ timeframe = '12 months', setTimeframe = () => {}, data = 
         </section>
 
         {/* Four Boxes Section */}
-        <div className="flex mb-8">
-          <div className="flex-1 bg-white p-4 rounded mr-4">
-            <h3 className="text-4xl font-semibold text-Black">958.042</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div className="bg-white p-4 rounded">
+            <h3 className="text-4xl font-semibold text-black">958.042</h3>
             <p className="text-customBlue">Total Sales</p>
-            <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12,7%</button>
+            <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12.7%</button>
           </div>
-          <div className="flex-1 bg-white p-4 rounded mr-4">
-            <h3 className="text-4xl font-semibold text-Black">958.042</h3>
+          <div className="bg-white p-4 rounded">
+            <h3 className="text-4xl font-semibold text-black">958.042</h3>
             <p className="text-customBlue">Total Sales</p>
-            <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12,7%</button>
+            <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12.7%</button>
           </div>
-          <div className="flex-1 bg-white p-4 rounded mr-4">
-            <h3 className="text-4xl font-semibold text-Black">958.042</h3>
+          <div className="bg-white p-4 rounded">
+            <h3 className="text-4xl font-semibold text-black">958.042</h3>
             <p className="text-customBlue">Total Sales</p>
-            <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12,7%</button>
+            <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12.7%</button>
           </div>
-          <div className="flex-1 bg-white p-4 rounded mr-4">
-            <h3 className="text-4xl font-semibold text-Black">958.042</h3>
+          <div className="bg-white p-4 rounded">
+            <h3 className="text-4xl font-semibold text-black">958.042</h3>
             <p className="text-customBlue">Total Sales</p>
-            <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12,7%</button>
+            <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12.7%</button>
           </div>
         </div>
 
         {/* Payments and Revenue Section in Two Columns */}
-        <div className="flex">
+        <div className="flex flex-wrap mb-8">
           {/* Payments Section */}
-          <div className="flex-1 mr-4">
-            <section className="mb-4">
-              <div className="mt-4 bg-white p-4 rounded">
-                <h3 className="text-xl font-semibold text-Black">Payments
-                  <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12,7%</button>
-                </h3>
-                <div className=" mb-4">
-                  <h4 className="text-2xl font-bold text-Black">31.214</h4>
-                </div>
-                <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={paymentsData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
-                    <YAxis tickFormatter={(value) => `${value}k`} domain={[0, 60000]} />
-                    <Tooltip />
-                    <Line type="monotone" dataKey="amount" stroke="#6B46C1" />
-                  </LineChart>
-                </ResponsiveContainer>
+          <div className="w-full md:w-1/2 mb-4 md:mb-0">
+            <div className="bg-white p-4 rounded">
+              <h3 className="text-xl font-semibold text-black flex items-center justify-between">Payments <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12.7%</button></h3>
+              <div className="mt-4 mb-4">
+                <h4 className="text-2xl font-bold text-black">31,214</h4>
               </div>
-            </section>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={paymentsData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="month" />
+                  <YAxis tickFormatter={(value) => `${value}k`} domain={[0, 60000]} />
+                  <Tooltip />
+                  <Line type="monotone" dataKey="amount" stroke="#6B46C1" />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
           </div>
 
           {/* Revenue Section */}
-          <div className="flex-1">
-            <section className="mb-4">
-              <div className="mt-4 bg-white p-4 rounded">
-                <h3 className="text-xl font-semibold text-Black">Revenue
-                  <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12,7%</button>
-                </h3>
-                <div className=" mb-4">
-                  <h4 className="text-2xl font-bold text-Black">$122.340,50</h4>
-                </div>
-                <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={paymentsData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
-                    <YAxis tickFormatter={(value) => `${value}k`} domain={[0, 60000]} />
-                    <Tooltip />
-                    <Line type="monotone" dataKey="amount" stroke="#6B46C1" />
-                  </LineChart>
-                </ResponsiveContainer>
+          <div className="w-full md:w-1/2">
+            <div className="bg-white p-4 rounded">
+              <h3 className="text-xl font-semibold text-black flex items-center justify-between">Revenue <button className="text-darkgreen bg-green rounded-full p-1 text-sm">+12.7%</button></h3>
+              <div className="mt-4 mb-4">
+                <h4 className="text-2xl font-bold text-black">$122,340.50</h4>
               </div>
-            </section>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={paymentsData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="month" />
+                  <YAxis tickFormatter={(value) => `${value}k`} domain={[0, 60000]} />
+                  <Tooltip />
+                  <Line type="monotone" dataKey="amount" stroke="#6B46C1" />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         </div>
       </main>
