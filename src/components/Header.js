@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FaSearch, FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import logoDesktop from '../assets/logoDesktop.png'; 
+import logoMobile from '../assets/logoMobile.png';  
 
 const Header = ({ toggleSidebar }) => {
   const [selectedItem, setSelectedItem] = useState(0);
@@ -23,6 +25,7 @@ const Header = ({ toggleSidebar }) => {
       <div className="flex items-center w-full md:w-auto">
         <FaBars className="text-customBlue cursor-pointer md:hidden" onClick={toggleSidebar} />
         <nav className="ml-4 hidden md:flex space-x-4">
+          <img src={logoDesktop} alt="Logo" style={{ width: '150px' }} />
           <Link
             to="/"
             className={classNames(
@@ -85,6 +88,9 @@ const Header = ({ toggleSidebar }) => {
           </Link>
         </nav>
       </div>
+      <div className="flex items-center justify-center w-full md:hidden">
+        <img src={logoMobile} alt="Logo" style={{ width: '20px' }} />
+      </div>
       <div className="flex items-center space-x-4 mt-4 md:mt-0 w-full md:w-auto">
         <div className="relative w-full md:w-auto">
           <input
@@ -108,6 +114,7 @@ const Header = ({ toggleSidebar }) => {
         >
           Menu
         </button>
+        
         {isDropdownOpen && (
           <div className="absolute left-0 mt-2 w-full bg-white rounded shadow-lg py-2 z-10">
             <Link
